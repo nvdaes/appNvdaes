@@ -2,23 +2,23 @@
   "name": "nvdaes",
   "productName": "nvdaes",
   "version": "1.0.0",
-  "description": "App for the nvdaes mailing list at groups.io",
+  "description": "App for the nvdaes spanish mailing list at groups.io",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "publish": "electron-forge publish"
+    "publish": "electron-forge publish",
+    "lint": "eslint src --color"
   },
   "keywords": [],
   "author": "Noelia Ruiz Martínez <nrm1977@gmail.com>",
-  "license": "GPL 2.0",
+  "license": "GPL2.0",
   "config": {
     "forge": {
       "make_targets": {
         "win32": [
-          "squirrel",
-          "zip"
+          "squirrel", "zip"
         ],
         "darwin": [
           "zip"
@@ -47,7 +47,6 @@
     }
   },
   "dependencies": {
-    "@electron-forge/publisher-github": "^6.0.0-beta.39",
     "electron-compile": "^6.4.4",
     "electron-squirrel-startup": "^1.0.0"
   },
