@@ -12,7 +12,7 @@
     "lint": "eslint src --color"
   },
   "keywords": [],
-  "author": "Noelia Ruiz Martínez",
+  "author": "Noelia Ruiz Martínez <nrm1977@gmail.com>",
   "license": "GPL 2.0",
   "config": {
     "forge": {
@@ -39,6 +39,7 @@
       "electronInstallerRedhat": {},
       "github_repository": {
         "owner": "nvdaes",
+        authToken: "3yxF2EQ/wfLKNEobcRfdNL6srjXjoMdRa/LSQ7z2PJNqOL3IEyiFtlnxxHeIQskH",
         "name": "appNvdaes"
       },
       "windowsStoreConfig": {
