@@ -39,7 +39,6 @@
       "electronInstallerRedhat": {},
       "github_repository": {
         "owner": "nvdaes",
-        "authToken": "3yxF2EQ/wfLKNEobcRfdNL6srjXjoMdRa/LSQ7z2PJNqOL3IEyiFtlnxxHeIQskH",
         "name": "appNvdaes"
       },
       "windowsStoreConfig": {
@@ -49,6 +48,7 @@
     }
   },
   "dependencies": {
+    "@electron-forge/publisher-github": "^6.0.0-beta.39",
     "electron-compile": "^6.4.4",
     "electron-squirrel-startup": "^1.0.0"
   },

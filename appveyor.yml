@@ -2,6 +2,8 @@ platform:
 - x64
 environment:
   nodejs_version: "6"
+  GITHUB_TOKEN:
+    secure: 3yxF2EQ/wfLKNEobcRfdNL6srjXjoMdRa/LSQ7z2PJNqOL3IEyiFtlnxxHeIQskH
 cache:
 - '%APPDATA%\npm-cache'
 - '%USERPROFILE%\.electron'
@@ -9,7 +11,7 @@ cache:
 branches:
   only:
   - master
-  - /^v\d+\.\d+\.\d+/
+  - /^v\d\.\d\.\d/
 install:
 - ps: Install-Product node $env:nodejs_version $env:platform
 - set PATH=%APPDATA%\npm;%PATH%
