@@ -21,7 +21,7 @@ install:
 test_script:
 - node --version
 - npm --version
-- npm run lint
+
 - if %APPVEYOR_REPO_TAG% EQU false npm run make
 
 build_script:
