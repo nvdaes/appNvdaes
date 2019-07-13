@@ -2,6 +2,7 @@ const { clipboard, dialog } = require('electron').remote;
 const fs = require('fs');
 
 let addons = [
+	{id: "developerToolkit", summary: "Developer Toolkit", author: "Andy Borka"},
 	{id: "addonsHelp", summary: "Documentación de complementos", author: "Zougane, Rémy, Abdel, Rui Fontes, con la colaboración de Ângelo Abrantes y James Scholes"},
 	{id: "charInfo", summary: "Información del carácter", author: "Cyrille Bougot"},
 	{id: "wordCount", summary: "Complemento para contar elementos del texto seleccionado", author: "rui.fontes@tiflotecnia.com"},
