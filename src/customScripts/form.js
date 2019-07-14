@@ -125,6 +125,7 @@ open.addEventListener('click', () => {
 			}
 			buildForm();
 		});
+		document.getElementById("crear").innerText += " " + fileName;
 	});
 });
 
