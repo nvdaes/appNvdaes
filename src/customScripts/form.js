@@ -155,5 +155,6 @@ markdown.addEventListener('click', () => {
 	}
 	if (text.length === 87) return
 	aside.innerText = text;
-	clipboard.writeText(text);
+	var wikiLink = "Tabla de complementos en HTML:\r\nhttps://nvdaes.groups.io/g/lista/wiki/Actualizaci%C3%B3n-de-complementos-%23ComunidadInternacional\r\n\r\n";
+	clipboard.writeText(wikiLink + text + "\r\nTabla creada con aplicación Nvdaes:\r\nhttps://github.com/nvdaes/appNvdaes\r\n");
 });
