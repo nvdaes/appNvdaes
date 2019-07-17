@@ -1,5 +1,11 @@
 import { app, BrowserWindow } from 'electron';
 
+// The current version of your app.
+const APP_VERSION = require('../package.json').version
+
+// The url that the application is going to query for new release
+const AUTO_UPDATE_URL =
+  'https://api.update.rocks/update/github.com/nvdaes/appNvdaes/stable/' + process.platform + '/' + APP_VERSION
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();

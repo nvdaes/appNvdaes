@@ -74,29 +74,6 @@ let addons = [
 
 document.title = app.getName() + " " + app.getVersion();
 
-const url = "https://api.github.com/repos/nvdaes/appNvdaes/releases/latest";
-const acercaDe = document.getElementById("acercaDe");
-
-https.get(url, res => {
-	res.setEncoding("utf8"); 
-	let body = "";
-	res.on("data", data => {
-		body += data;
-	});
-	res.on("end", () => {
-		let body = JSON.parse(body);
-		var currentVersion = body.name.substr(1);
-		if (currentVersion === app.getVersion()) {
-			acercaDe.innerText = "No hay actualización disponible";
-		} else {
-			var lastVersionLink = document.createElement("A");
-			lastVersionLink.setAttribute("href", "https://github.com/nvdaes/appNvdaes/releases/download/" + body.name + "nvdaes-" + currentVersion + ".setup.exe");
-			lastVersionLink.innerText = "Descargar versión" + currentVersion + "(ejecutable para Windows)";
-			acercaDe.appendChild(lastVersionLink);
-		}
-	});
-});
-
 const output = document.getElementById("data")
 
 function buildForm() {
