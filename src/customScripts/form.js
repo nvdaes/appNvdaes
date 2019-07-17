@@ -84,7 +84,7 @@ https.get(url, res => {
 		body += data;
 	});
 	res.on("end", () => {
-		body = JSON.parse(body);
+		let body = JSON.parse(body);
 		var currentVersion = body.name.substr(1);
 		if (currentVersion === app.getVersion()) {
 			acercaDe.innerText = "No hay actualización disponible";
@@ -92,7 +92,7 @@ https.get(url, res => {
 			var lastVersionLink = document.createElement("A");
 			lastVersionLink.setAttribute("href", "https://github.com/nvdaes/appNvdaes/releases/download/" + body.name + "nvdaes-" + currentVersion + ".setup.exe");
 			lastVersionLink.innerText = "Descargar versión" + currentVersion + "(ejecutable para Windows)";
-			acercaDe.appendChild(lastVersionLink)
+			acercaDe.appendChild(lastVersionLink);
 		}
 	});
 });
