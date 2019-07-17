@@ -1,6 +1,6 @@
 {
   "name": "nvdaes",
-  "productName": "nvdaes",
+  "productName": "Nvdaes",
   "version": "1.2.0",
   "description": "App for the nvdaes spanish mailing list at groups.io",
   "main": "src/index.js",
