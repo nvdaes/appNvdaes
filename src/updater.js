@@ -1,6 +1,6 @@
 import electron, {dialog} from 'electron'
 const APP_VERSION = require('../package.json').version
-import log from 'log-to-file'
+// import log from 'log-to-file'
 
 const AUTO_UPDATE_URL = 'https://api.update.rocks/update/github.com/nvdaes/appNvdaes/stable/' + process.platform + '/' + APP_VERSION
 
@@ -16,25 +16,25 @@ function init () {
 function initDarwinWin32 () {
   electron.autoUpdater.on(
     'error',
-    (err) => log(`Update error: ${err.message}`, 'nvdaes'))
+    (err) => console.log(err.message))
 
   electron.autoUpdater.on(
     'checking-for-update',
-    () => log('Checking for update', 'nvdaes'))
+    () => console.log('Checking for update, nvdaes'))
 
   electron.autoUpdater.on(
     'update-available',
-    () => log('Update available', 'nvdaes'))
+    () => console.log('Update available, nvdaes'))
 
   electron.autoUpdater.on(
     'update-not-available',
-    () => log('No update available', 'nvdaes'))
+    () => console.log('No update available, nvdaes'))
 
   // Ask the user if update is available
   electron.autoUpdater.on(
     'update-downloaded',
     (event, releaseNotes, releaseName) => {
-      log('Update downloaded', 'nvdaes')
+      console.log('Update downloaded, nvdaes')
       dialog.showMessageBox({
         type: 'question',
         buttons: ['Update', 'Cancel'],

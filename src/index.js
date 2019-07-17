@@ -1,16 +1,16 @@
 import { app, BrowserWindow, dialog } from 'electron'
 import updater from './updater'
 import isDev from 'electron-is-dev'
-import log from 'log-to-file'
+// import log from 'log-to-file'
 
-log(process.argv, 'nvdaes')
+// log(process.argv, 'nvdaes')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
 const createWindow = () => {
-  log('Creating window', 'nvdaes')
+  // log('Creating window', 'nvdaes')
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
@@ -27,7 +27,7 @@ const createWindow = () => {
   } else {
     // Handle squirrel event. Avoid calling for updates when install
     if(require('electron-squirrel-startup')) {
-      log('Squirrel events handle', 'nvdaes')
+      // log('Squirrel events handle', 'nvdaes')
       app.quit()
       // Hack because app.quit() is not immediate
       process.exit(0)
@@ -36,21 +36,21 @@ const createWindow = () => {
     if (process.platform === 'win32') {
       var cmd = process.argv[1]
       if (cmd === '--squirrel-firstrun') {
-        log('Squirrel first run', 'nvdaes')
+        // log('Squirrel first run', 'nvdaes')
         return
       }
     }
 
     // Check for updates
     mainWindow.webContents.once("did-frame-finish-load", function (event) {
-      log('Ready to look for update', 'nvdaes')
+      // log('Ready to look for update', 'nvdaes')
       updater.init()
     })
   }
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
-    log('Closing app', 'nvdaes')
+    // log('Closing app', 'nvdaes')
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
