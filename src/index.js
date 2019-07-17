@@ -1,6 +1,6 @@
 import { app, BrowserWindow, dialog } from 'electron'
 import updater from './updater'
-import isDev from 'electron-is-dev'
+// import isDev from 'electron-is-dev'
 // import log from 'log-to-file'
 
 // log(process.argv, 'nvdaes')
@@ -21,17 +21,17 @@ const createWindow = () => {
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)
 
-  if (isDev) {
+  // if (isDev) {
     // Open the DevTools.
-    mainWindow.webContents.openDevTools()
-  } else {
-    // Handle squirrel event. Avoid calling for updates when install
-    if(require('electron-squirrel-startup')) {
-      // log('Squirrel events handle', 'nvdaes')
-      app.quit()
-      // Hack because app.quit() is not immediate
-      process.exit(0)
-    }
+    // mainWindow.webContents.openDevTools()
+  // } else {
+  // Handle squirrel event. Avoid calling for updates when install
+  if(require('electron-squirrel-startup')) {
+    // log('Squirrel events handle', 'nvdaes')
+    app.quit()
+    // Hack because app.quit() is not immediate
+    process.exit(0)
+    // }
 
     if (process.platform === 'win32') {
       var cmd = process.argv[1]
