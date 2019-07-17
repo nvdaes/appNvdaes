@@ -1,5 +1,6 @@
-const { clipboard, dialog } = require('electron').remote;
+const { app, clipboard, dialog } = require('electron').remote;
 const fs = require('fs');
+const https = require("https"); 
 
 let addons = [
 	{id: "developerToolkit", summary: "Developer Toolkit", author: "Andy Borka"},
@@ -70,6 +71,31 @@ let addons = [
 	{id: "dropbox", summary: "dropbox", author: "Patrick Zajda, Filaos y otros colaboradores"},
 	{id: "systrayList", summary: "systrayList", author: "Rui Fontes, Rui Batista, Joseph Lee, colaboradores de la comunidad de NVDA"}
 ]
+
+document.title = app.getName() + " " + app.getVersion();
+
+const url = "https://api.github.com/repos/nvdaes/appNvdaes/releases/latest";
+const acercaDe = document.getElementById("acercaDe");
+
+https.get(url, res => {
+	res.setEncoding("utf8"); 
+	let body = "";
+	res.on("data", data => {
+		body += data;
+	});
+	res.on("end", () => {
+		body = JSON.parse(body);
+		var currentVersion = body.name.substr(1);
+		if (currentVersion === app.getVersion()) {
+			acercaDe.innerText = "No hay actualización disponible";
+		} else {
+			var lastVersionLink = document.createElement("A");
+			lastVersionLink.setAttribute("href", "https://github.com/nvdaes/appNvdaes/releases/download/" + body.name + "nvdaes-" + currentVersion + ".setup.exe");
+			lastVersionLink.innerText = "Descargar versión" + currentVersion + "(ejecutable para Windows)";
+			acercaDe.appendChild(lastVersionLink)
+		}
+	});
+});
 
 const output = document.getElementById("data")
 
