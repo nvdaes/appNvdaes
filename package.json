@@ -1,7 +1,7 @@
 {
   "name": "nvdaes",
   "productName": "Nvdaes",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "App for the nvdaes spanish mailing list at groups.io",
   "main": "src/index.js",
   "scripts": {
