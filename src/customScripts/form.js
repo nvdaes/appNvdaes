@@ -1,6 +1,31 @@
-const { app, clipboard, dialog } = require('electron').remote;
+const {app, clipboard, dialog } = require('electron').remote;
 const fs = require('fs');
-const https = require("https"); 
+const request = require('request');
+
+const options = {
+	url: 'https://api.github.com/repos/nvdaes/appNvdaes/releases/latest',
+	headers: {
+		'User-Agent': 'request'
+	}
+};
+
+function callback(error, response, body) {
+	if (!error && response.statusCode == 200) {
+		var releaseInfo = JSON.parse(body);
+	}
+}
+
+request(options, callback);
+
+if (releaseInfo !== undefined) {
+	var releaseName = releaseInfo.name;
+	var lastVersion = releaseName.substr(1);
+	var link = document.createElement("A");
+	link.setAttribute("href", "https://github.com/nvdaes/appNvdaes/releases/download/" + releaseName + "/Nvdaes-" + latestVersion + ".Setup.exe")
+	link.innerText = "Descargar última versión (" + lastVersion + ")";
+	document.getElementById("release").appendChild(link);
+} else { document.getElementById("release").innerText = "No se ha podido encontrar la última versión de este programa."; }
+
 
 let addons = [
 	{id: "developerToolkit", summary: "Developer Toolkit", author: "Andy Borka"},
@@ -159,5 +184,5 @@ markdown.addEventListener('click', () => {
 	if (text.length === 87) return
 	aside.innerText = text;
 	var wikiLink = "Tabla de complementos en HTML:\r\nhttps://nvdaes.groups.io/g/lista/wiki/Actualizaci%C3%B3n-de-complementos-%23ComunidadInternacional\r\n\r\n";
-	clipboard.writeText(wikiLink + text + "\r\nTabla creada con aplicación Nvdaes:\r\nhttps://github.com/nvdaes/appNvdaes\r\n");
+	clipboard.writeText(wikiLink + text + "\r\nTabla creada con aplicación Nvdaes:\r\nhttps://github.com/nvdaes/appNvdaes\r\n" + getLastVersion());
 });

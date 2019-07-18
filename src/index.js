@@ -33,6 +33,7 @@ const createWindow = () => {
       process.exit(0)
     }
 
+<<<<<<< HEAD
     if (process.platform === 'win32') {
       var cmd = process.argv[1]
       if (cmd === '--squirrel-firstrun') {
@@ -47,6 +48,10 @@ const createWindow = () => {
       updater.init()
     })
   }
+=======
+  // Open the DevTools.
+  mainWindow.webContents.openDevTools();
+>>>>>>> 632d5c5f256feb6e1abf3bd199842e3531882ab2
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
