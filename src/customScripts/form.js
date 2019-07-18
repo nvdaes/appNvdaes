@@ -21,10 +21,10 @@ if (releaseInfo !== undefined) {
 	var releaseName = releaseInfo.name;
 	var lastVersion = releaseName.substr(1);
 	var link = document.createElement("A");
-	link.setAttribute("href", "https://github.com/nvdaes/appNvdaes/releases/download/" + releaseName + "/Nvdaes-" + lastVersion + ".Setup.exe")
+	link.setAttribute("href", "https://github.com/nvdaes/appNvdaes/releases/download/" + releaseName + "/Nvdaes-" + lastVersion + ".setup.exe")
 	link.innerText = "Descargar última versión (" + lastVersion + ")";
 	document.getElementById("release").appendChild(link);
-} else { document.getElementById("release").innerText = "No se ha podido encontrar la última versión de este programa."; }
+} else { document.getElementById("release").innerText = "No se ha podido encontrar la última versión de este programa." };
 
 
 let addons = [
