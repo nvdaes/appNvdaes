@@ -1,5 +1,24 @@
-const { clipboard, dialog } = require('electron').remote;
+const {app, clipboard, dialog } = require('electron').remote;
 const fs = require('fs');
+const request = require('request');
+
+const options = {
+	url: 'https://api.github.com/repos/nvdaes/appNvdaes/releases/latest',
+	headers: {
+		'User-Agent': 'request'
+	}
+};
+
+function callback(error, response, body) {
+	if (!error && response.statusCode == 200) {
+		const info = JSON.parse(body);
+		console.log(info.name);
+	}
+}
+
+request(options, callback);
+
+document.title = app.getName() + " " + app.getVersion();
 
 let addons = [
 	{id: "developerToolkit", summary: "Developer Toolkit", author: "Andy Borka"},
@@ -71,7 +90,9 @@ let addons = [
 	{id: "systrayList", summary: "systrayList", author: "Rui Fontes, Rui Batista, Joseph Lee, colaboradores de la comunidad de NVDA"}
 ]
 
+
 const output = document.getElementById("data")
+
 
 function buildForm() {
 	for (var addon of addons) {
@@ -156,5 +177,5 @@ markdown.addEventListener('click', () => {
 	if (text.length === 87) return
 	aside.innerText = text;
 	var wikiLink = "Tabla de complementos en HTML:\r\nhttps://nvdaes.groups.io/g/lista/wiki/Actualizaci%C3%B3n-de-complementos-%23ComunidadInternacional\r\n\r\n";
-	clipboard.writeText(wikiLink + text + "\r\nTabla creada con aplicación Nvdaes:\r\nhttps://github.com/nvdaes/appNvdaes\r\n");
+	clipboard.writeText(wikiLink + text + "\r\nTabla creada con aplicación Nvdaes:\r\nhttps://github.com/nvdaes/appNvdaes\r\n" + getLastVersion());
 });
