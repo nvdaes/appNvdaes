@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header id="header">
+    <h1>App para la lista de nvdaes en groups.io</h1>
+	<p id="release"></p>
+	</header>
+	<main>
+	<details id="details"><summary>Ayuda</summary>
+	<h2>Ayuda para usar la aplicación</h2>
+	<p>Esta aplicación puede ayudar a crear tablas de complementos actualizados en un periodo de tiempo, para publicarlas en la <a hreflang="en" href="https://nvdaes.groups.io/g/lista" title="Lista de la comunidad hispanohablante de NVDA">lista nvdaes de groups.io</a> con el hashtag #ComunidadInternacional.</p>
+	
+	<h3>Procedimiento</h3>
+	<ol>
+	<li>Describir los cambios en los cuadros de edición correspondientes a los complementos actualizados.</li>
+	<li>Activar el botón Crear tabla markdown.</li>
+	</ol>
+	
+	<p>La tabla aparecerá en este documento como un punto de referencia complementario y podrá ser leída automáticamente por lectores de pantalla. También se copiará al portapapeles, precedida por el enlace a latabla de complementos del wiki, de forma que pueda pegarse en un mensaje de correo electrónico.</p>
+	<p>Es posible editar la tabla en el wiki de la lista mediante el enlace correspondiente o pulsando alt+0. De esta forma la tabla se convertirá a formato HTML.</p>
+	<p>Mediante los botones Abrir y Guardar archivo de datos se podrán importar y exportar datos almacenados con esta aplicación, para actualizar el formulario con los comentarios introducidos en sesiones anteriores.</p>
+	</details>
+	<p><a accesskey="0" href="https://nvdaes.groups.io/g/lista/wiki/Actualizaci%C3%B3n-de-complementos-%23ComunidadInternacional/edit" title="Pegar markdown">Editar tabla en wiki</a></p>
+	<h2 id="crear">Crear tabla de complementos</h2>
+	<form id="form" role="form">
+	<div id="data"></div>
+	<p>
+	<input id="abrir" type="button" value="Abrir archivo de datos...">
+	</p>
+	
+	<p>
+	<input id="ver" type="button" value="Crear tabla markdown">
+	</p>
+	
+	<p>
+	<input id="guardar" type="button" value="Guardar archivo de datos...">
+	</p
+	</form>
+	<div id="tabla" aria-live="polite"></div>
+</main>
+	<footer><p><a accesskey="1" href="https://github.com/nvdaes/appnvdaes" title="https://github.com/nvdaes/appnvdaes">App de la comunidad hispanohablante de NVDA (nvdaes)</a></p></footer>
+	<script>require("./customScripts/form.js")</script>
+  </body>
+</html>
