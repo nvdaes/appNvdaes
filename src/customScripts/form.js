@@ -22,13 +22,13 @@ function callback(error, response, body) {
 		} else {
 			document.getElementById("release").innerText = "No se ha podido encontrar la última versión de este programa." };
 		}
-};
+	}
+}
 
-
-
-
+request(options, callback);
 
 document.title = app.getName() + " " + app.getVersion();
+
 let addons = [
 	{id: "developerToolkit", summary: "Developer Toolkit", author: "Andy Borka"},
 	{id: "addonsHelp", summary: "Documentación de complementos", author: "Zougane, Rémy, Abdel, Rui Fontes, con la colaboración de Ângelo Abrantes y James Scholes"},
@@ -188,5 +188,3 @@ markdown.addEventListener('click', () => {
 	var wikiLink = "Tabla de complementos en HTML:\r\nhttps://nvdaes.groups.io/g/lista/wiki/Actualizaci%C3%B3n-de-complementos-%23ComunidadInternacional\r\n\r\n";
 	clipboard.writeText(wikiLink + text + "\r\nTabla creada con aplicación Nvdaes:\r\nhttps://github.com/nvdaes/appNvdaes\r\n" + getLastVersion());
 });
-
-request(options, callback);
