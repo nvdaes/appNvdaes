@@ -99,8 +99,6 @@ let addons = [
 	{id: "systrayList", summary: "systrayList", author: "Rui Fontes, Rui Batista, Joseph Lee, colaboradores de la comunidad de NVDA"}
 ]
 
-document.title = app.getName() + " " + app.getVersion();
-
 const output = document.getElementById("data")
 
 function buildForm() {
