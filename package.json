@@ -1,7 +1,7 @@
 {
   "name": "nvdaes",
   "productName": "Nvdaes",
-  "version": "3.3.4",
+  "version": "3.3.5",
   "description": "App for the nvdaes spanish mailing list at groups.io",
   "main": "src/index.js",
   "scripts": {
@@ -48,7 +48,9 @@
   },
   "dependencies": {
     "electron-compile": "^6.4.4",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",

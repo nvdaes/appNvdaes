@@ -1,33 +1,27 @@
 const {app, clipboard, dialog } = require('electron').remote;
 const fs = require('fs');
-const request = require('request');
+const rp = require('request-promise');
+
+document.title = app.getName() + " " + app.getVersion();
 
 const options = {
 	url: 'https://api.github.com/repos/nvdaes/appNvdaes/releases/latest',
+	json: true,
 	headers: {
-		'User-Agent': 'request'
+		'User-Agent': 'request-promise'
 	}
 };
 
-function callback(error, response, body) {
-	if (!error && response.statusCode == 200) {
-		var releaseInfo = JSON.parse(body);
-		if (releaseInfo !== undefined) {
-			var releaseName = releaseInfo.name;
-			var lastVersion = releaseName.substr(1);
-			var link = document.createElement("A");
-			link.setAttribute("href", "https://github.com/nvdaes/appNvdaes/releases/download/" + releaseName + "/Nvdaes-" + lastVersion + ".setup.exe");
-			link.innerText = "Descargar última versión (" + lastVersion + ")";
-			document.getElementById("release").appendChild(link);
-		} else {
-			document.getElementById("release").innerText = "No se ha podido encontrar la última versión de este programa.";
-		}
-	}
-}
-
-request(options, callback);
-
-document.title = app.getName() + " " + app.getVersion();
+rp(options)
+	.then(latestRelease => {
+		var releaseName = latestRelease.name;
+		var lastVersion = releaseName.substr(1);
+		var link = document.createElement("A");
+		link.setAttribute("href", "https://github.com/nvdaes/appNvdaes/releases/download/" + releaseName + "/Nvdaes-" + lastVersion + ".setup.exe");
+		link.innerText = "Descargar última versión (" + lastVersion + ")";
+		document.getElementById("release").appendChild(link);
+	})
+	.catch(err => { document.getElementById("release").innerText = "Última versión no encontrada."});
 
 let addons = [
 	{id: "developerToolkit", summary: "Developer Toolkit", author: "Andy Borka"},
