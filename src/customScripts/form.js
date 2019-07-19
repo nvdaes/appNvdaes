@@ -20,7 +20,7 @@ function callback(error, response, body) {
 			link.innerText = "Descargar última versión (" + lastVersion + ")";
 			document.getElementById("release").appendChild(link);
 		} else {
-			document.getElementById("release").innerText = "No se ha podido encontrar la última versión de este programa." };
+			document.getElementById("release").innerText = "No se ha podido encontrar la última versión de este programa.";
 		}
 	}
 }
