@@ -1,7 +1,7 @@
 {
   "name": "nvdaes",
   "productName": "Nvdaes",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "App for the nvdaes spanish mailing list at groups.io",
   "main": "src/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "Noelia Ruiz Martínez <nrm1977@gmail.com>",
-  "license": "GPL-2",
+  "license": "GPL-2.0-or-later",
   "config": {
     "forge": {
       "make_targets": {
