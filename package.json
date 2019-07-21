@@ -29,7 +29,8 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "npm"
+        "packageManager": "npm",
+        "appCopyright": "Copyright (C) 2019 Noelia Ruiz Martínez"
       },
       "electronWinstallerConfig": {
         "name": "nvdaes"
