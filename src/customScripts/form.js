@@ -1,3 +1,18 @@
+// src/customScripts/form.js
+/*
+Copyright (C) 2019 Noelia Ruiz Martínez <nrm1977@gmail.com>
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+*/
+
 const {app, clipboard, dialog } = require('electron').remote;
 const fs = require('fs');
 const rp = require('request-promise');
@@ -147,7 +162,7 @@ open.addEventListener('click', () => {
 			}
 			buildForm();
 		});
-		document.getElementById("crear").innerText += " " + fileName;
+		document.getElementById("crear").innerText = "Crear tabla de complementos - " + fileName;
 	});
 });
 
@@ -178,5 +193,6 @@ markdown.addEventListener('click', () => {
 	if (text.length === 87) return
 	aside.innerText = text;
 	var wikiLink = "Tabla de complementos en HTML:\r\nhttps://nvdaes.groups.io/g/lista/wiki/Actualizaci%C3%B3n-de-complementos-%23ComunidadInternacional\r\n\r\n";
-	clipboard.writeText(wikiLink + text + "\r\nTabla creada con aplicación Nvdaes:\r\nhttps://github.com/nvdaes/appNvdaes\r\n" + getLastVersion());
+	var clipboardText = wikiLink + text + "\r\nTabla creada con [aplicación Nvdaes](https://github.com/nvdaes/appNvdaes)";
+	clipboard.writeText(clipboardText);
 });
