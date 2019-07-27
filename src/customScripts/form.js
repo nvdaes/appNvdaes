@@ -95,7 +95,7 @@ let addons = [
 	{id: "goldwave", summary: "Goldwave", author: "Joseph Lee, colaboradores de NVDA"},
 	{id: "emoticons", summary: "Emoticons", author: "Chris Leo, Noelia Ruiz Martínez, Mesar Hameed, Francisco Javier Estrada Martínez"},
 	{id: "eMule", summary: "eMule", author: "Noelia, Chris, Alberto"},
-	{id: "focusHighlight", summary: "Focus Highlight", author: "Takuya Nishimoto"},
+	{id: "focusHighlight", summary: "Focus Highlight", author: "Takuya Nishimoto, Karl-Otto Rosenqvist"},
 	{id: "noBeepsSpeechMode", summary: "NoBeepsSpeechMode", author: "Alberto Buffolino"},
 	{id: "virtualRevision", summary: "Virtual Review", author: "Rui Batista y equipo de complementos de NVDA"},
 	{id: "placeMarkers", summary: "placeMarkers", author: "Noelia, Chris"},
