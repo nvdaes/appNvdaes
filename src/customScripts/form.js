@@ -116,7 +116,6 @@ function buildForm() {
 		input.setAttribute("id", addon.id);
 		input.setAttribute("name", addon.id);
 		input.setAttribute("placeholder", addon.id);
-		if (addon.comment !== undefined) input.setAttribute("value", addon.comment);
 		var label = document.createElement("LABEL");
 		label.setAttribute("for", addon.id);
 		label.innerText = addon.summary;
@@ -156,11 +155,14 @@ open.addEventListener('click', () => {
 		var fileName = fileNames[0];
 		fs.readFile(fileName, 'utf-8', function (err, data) {
 			if (err) dialog.showErrorBox("Error", err.message);
-			addons = JSON.parse(data);
+			var fileAddons = JSON.parse(data);
 			for (var p of document.querySelectorAll("div p")) {
 				p.remove();
 			}
 			buildForm();
+			for (var fileAddon of fileAddons) {
+				if (fileAddon.comment !== undefined) {document.getElementById(fileAddon.id).setAttribute("value", fileAddon.comment);}
+			}
 		});
 		document.getElementById("crear").innerText = "Crear tabla de complementos - " + fileName;
 	});
