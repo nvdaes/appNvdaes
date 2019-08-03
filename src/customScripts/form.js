@@ -101,7 +101,7 @@ let addons = [
 	{id: "placeMarkers", summary: "placeMarkers", author: "Noelia, Chris"},
 	{id: "controlUsageAssistant", summary: "Control Usage Assistant", author: "Joseph Lee"},
 	{id: "resourceMonitor", summary: "Resource Monitor", author: "Alex Hall, Joseph Lee, beqa gozalishvili, Tuukka Ojala, Ethin Probst y otros"},
-	{id: "unicodeBrailleInput", summary: "UnicodeBrailleInput", author: "Mesar Hameed, Patrick Zajda"},
+	{id: "unicodeBrailleInput", summary: "UnicodeBrailleInput", author: "Mesar Hameed, Patrick Zajda, Leonard de Ruijter"},
 	{id: "ocr", summary: "OCR", author: "NV Access Limited y otros colaboradores"},
 	{id: "extendedWinamp", summary: "extendedWinamp", author: "Hrvoje Katic y el equipo de complementos de NVDA"},
 	{id: "dropbox", summary: "dropbox", author: "Patrick Zajda, Filaos y otros colaboradores"},
