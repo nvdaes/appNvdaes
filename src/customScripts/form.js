@@ -39,6 +39,8 @@ rp(options)
 	.catch(err => { document.getElementById("release").innerText = "Última versión no encontrada."});
 
 let addons = [
+	{id: "debugHelper", summary: "Ayudante de depuración", author: "Luke Davis"},
+	{id: "NotepadPlusPlus", summary: "Notepad++", author: "Derek Riemer, Tuukka Ojala"},
 	{id: "developerToolkit", summary: "Developer Toolkit", author: "Andy Borka"},
 	{id: "addonsHelp", summary: "Documentación de complementos", author: "Zougane, Rémy, Abdel, Rui Fontes, con la colaboración de Ângelo Abrantes y James Scholes"},
 	{id: "charInfo", summary: "Información del carácter", author: "Cyrille Bougot"},
