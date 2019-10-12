@@ -39,8 +39,10 @@ rp(options)
 	.catch(err => { document.getElementById("release").innerText = "Última versión no encontrada."});
 
 let addons = [
+	{id: "synthRingSettingsSelector", summary: "Selector de opciones del anillo del sintetizador", author: "David CM"},
 	{id: "debugHelper", summary: "Ayudante de depuración", author: "Luke Davis"},
 	{id: "NotepadPlusPlus", summary: "Notepad++", author: "Derek Riemer, Tuukka Ojala"},
+	{id: "beepKeyboard", summary: "Beep Keyboard", author: "David CM"},
 	{id: "developerToolkit", summary: "Developer Toolkit", author: "Andy Borka"},
 	{id: "addonsHelp", summary: "Documentación de complementos", author: "Zougane, Rémy, Abdel, Rui Fontes, con la colaboración de Ângelo Abrantes y James Scholes"},
 	{id: "charInfo", summary: "Información del carácter", author: "Cyrille Bougot"},
